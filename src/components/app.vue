@@ -1,30 +1,42 @@
 <template>
-  <div id="contain">  
-        <h1>速  讯</h1>
-        <h2>拉近我们心灵的距离，感知爱与牵绊</h2>
-        <div class="btns">
-            <router-link to="/home/register" class="btn">注册</router-link>
-            <router-link to="/home/login">登录</router-link>
-        </div>
-        <router-view></router-view> 
-    </div>
+
+  <div >
+    <el-container >
+  <el-header>
+    </el-header>
+  <el-main>
+    <el-row type="flex" :justify="space-between">
+      <el-col :xl="{span:4,offset:10}" :lg="{span:6,offset:9}" :md="{span:8,offset:8}" :sm="{span:10,offset:7}" :xs="{span:18,offset:3}">
+          <router-link to="/home/register">注册</router-link>
+          <router-link to="/home/login">登录</router-link>
+          <router-view></router-view> 
+      </el-col>
+    </el-row></el-main>
+  <el-footer></el-footer>
+</el-container>
+    
+  </div>
 </template>
+<style>
+  .el-header, .el-footer {
+    line-height: 60px;
+  }
+  
 
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  .el-main {
+    text-align: center;
+    line-height: 160px;
+  }
+  body > .el-container {
+    margin-bottom: 40px;
+  }
+  
+  .el-container:nth-child(5) .el-aside,
+  .el-container:nth-child(6) .el-aside {
+    line-height: 260px;
+  }
+  
+  .el-container:nth-child(7) .el-aside {
+    line-height: 320px;
+  }
 </style>

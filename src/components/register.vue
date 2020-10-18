@@ -1,7 +1,5 @@
 <template>
     <div>
-        <el-row :gutter="20">
-            <el-col :span="6" :offset="9">
                 <el-form ref="form" status-icon :rules="rules" :model="form" label-width="80px">
                     <el-form-item label="用户名" prop="name">
                         <el-input  type="text" v-model="form.name" autocomplete="off"></el-input>
@@ -17,8 +15,6 @@
                         <el-button @click="reset('form')">重置</el-button>
                     </el-form-item>
                 </el-form>
-            </el-col>
-        </el-row>
         
     </div>
 </template>
@@ -83,3 +79,8 @@ export default {
     }
 }
 </script>
+<style scoped>
+ #contain{
+     margin-top: 10%;
+ }
+</style>
