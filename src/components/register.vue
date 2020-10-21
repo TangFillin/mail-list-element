@@ -11,7 +11,7 @@
                         <el-input  type="password" v-model="form.pwd" autocomplete="off"></el-input>
                     </el-form-item>
                     <el-form-item>
-                        <el-button type="primary" @click="register('form')" :loading="registerBtn">注册</el-button>
+                        <el-button type="primary" @click="registerUser('form')" :loading="registerBtn">注册</el-button>
                         <el-button @click="reset('form')">重置</el-button>
                     </el-form-item>
                 </el-form>
@@ -67,17 +67,33 @@ export default {
                     validator: checkPwd, trigger:'blur'
                 }],
             },
-            registerBtn:false
+            registerBtn:false,//注册按钮特效开关
         }
         
     },
     methods:{
         ...mapActions(['register']),
-        register(form){
+        registerUser(form){
             this.registerBtn=true;
             this.$refs[form].validate((valid)=>{
                 if(valid){
-                    alert("valid");
+                    this.register(this.form);
+                    if(sessionStorage.register && sessionStorage.register == 1){
+                        this.form.name = "";
+                        this.form.tel = "";
+                        this.form.pwd = "";
+                        this.$notify({
+                            title: '成功',
+                            message: '注册成功',
+                            type: 'success'
+                            });
+                    } else{
+                        this.$notify({
+                            title: '失败',
+                            message: sessionStorage.message,
+                            type: 'error'
+                            });
+                    }
                 }
                 this.registerBtn= false;
             })

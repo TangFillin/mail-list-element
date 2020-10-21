@@ -12,7 +12,7 @@ export default {
             var b = 0;
             for(var i=0; i < localStorage.length; i++){
                 if(localStorage.key(i).indexOf('user')!=-1){
-                    if(JSON.parse(localStorage.getItem(localStorage.key(u))).name == user.name){
+                    if(JSON.parse(localStorage.getItem(localStorage.key(i))).name == user.name){
                         b=1;
                         break;
                     }
@@ -24,6 +24,7 @@ export default {
                 sessionStorage.register = 1; // 注册成功
             } else {
                 sessionStorage.register = 0;
+                sessionStorage.message = "用户已存在";
             }
         },
         [SIGN_IN](state, user){
