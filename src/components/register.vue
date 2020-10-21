@@ -33,8 +33,8 @@ export default {
         };
         var checkTel=(rule, value, callback) => {
             setTimeout(() => {
-                if(!Number.isInteger(value)){
-                    callback(new Error('请输入数字'))
+                if(!isPhoneNumber(value)){
+                    callback(new Error('请输入正确的手机号码'))
                 }else{
                     callback();
                 }
@@ -75,11 +75,21 @@ export default {
         ...mapActions(['register']),
         register(form){
             this.registerBtn=true;
+            this.$refs[form].validate((valid)=>{
+                if(valid){
+                    alert("valid");
+                }
+                this.registerBtn= false;
+            })
         },
         reset(form){
             this.$refs[form].resetFields();
         }
     }
+}
+function isPhoneNumber(tel) {
+    var reg =/^0?1[3|4|5|6|7|8][0-9]\d{8}$/;
+    return reg.test(tel);
 }
 </script>
 <style scoped>
