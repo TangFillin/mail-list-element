@@ -11,7 +11,7 @@
                         <el-input  type="password" v-model="form.pwd" autocomplete="off"></el-input>
                     </el-form-item>
                     <el-form-item>
-                        <el-button type="primary" @click="register('form')">注册</el-button>
+                        <el-button type="primary" @click="register('form')" :loading="registerBtn">注册</el-button>
                         <el-button @click="reset('form')">重置</el-button>
                     </el-form-item>
                 </el-form>
@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex' 
 export default {
     data(){
         //验证规则
@@ -65,13 +66,15 @@ export default {
                 pwd:[{
                     validator: checkPwd, trigger:'blur'
                 }],
-            }
+            },
+            registerBtn:false
         }
         
     },
     methods:{
+        ...mapActions(['register']),
         register(form){
-
+            this.registerBtn=true;
         },
         reset(form){
             this.$refs[form].resetFields();

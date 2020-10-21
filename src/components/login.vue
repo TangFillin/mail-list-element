@@ -30,7 +30,6 @@ export default {
 
         },
         reset(form){
-
         }
     }
 }
