@@ -41,7 +41,7 @@ export default {
             if(f == 1 && user.pwd == localuser.pwd){
                 sessionStorage.login = 1;
                 sessionStorage.user = JSON.stringify(localuser);
-                sessionStorage.userId = localuser.key(i);
+                sessionStorage.userId = localuser.name;
             } else {
                 sessionStorage.login = 0;
             }

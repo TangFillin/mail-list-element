@@ -7,7 +7,7 @@
                     <el-form-item label="电话号码" prop="tel">
                         <el-input v-model="form.tel" autocomplete="off"></el-input>
                     </el-form-item>
-                    <el-form-item label="密码" prop="name">
+                    <el-form-item label="密码" prop="pwd">
                         <el-input  type="password" v-model="form.pwd" autocomplete="off"></el-input>
                     </el-form-item>
                     <el-form-item>
