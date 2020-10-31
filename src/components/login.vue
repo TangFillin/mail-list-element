@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-form ref="form" status-icon :rules="rules" :model="form" label-width="80px">
+        <el-form ref="form" status-icon :model="form" label-width="80px">
             <el-form-item label="用户名" prop="name">
                 <el-input  type="text" v-model="form.name" autocomplete="off"></el-input>
             </el-form-item>
