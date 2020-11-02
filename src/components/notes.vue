@@ -1,13 +1,15 @@
 <template>
     <div class="">
-        <h1>hellow</h1>
-        <div v-if="newItems.length">
+        <el-row :gutter="20">
+            <div v-if="newItems.length">
             <contactItem 
                 v-for="item in newItems"
                 :key= "item.id"
                 :item="item"
             />
         </div>
+        </el-row>
+        
     </div>
 </template>
 
@@ -54,3 +56,18 @@ export default {
     
 }
 </script>
+<style>
+    .el-row {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+  }
+</style>

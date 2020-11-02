@@ -11,7 +11,6 @@
                             <span>{{user.name}}</span>, 你好！
                             <el-avatar :src="userImage" :size="size"></el-avatar>
                         </div>
-                        
                     </el-row>
                     
                     

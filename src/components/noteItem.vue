@@ -1,18 +1,23 @@
 <template>
-    <div>
-        <div v-if="show">
-            <div class="text">
-                <img :src="item.imgSrc"/>
-                <div>
-                    <h1 class="name">{{item.name}}</h1>
-                    <p class="tel">{{item.tel}}</p>
-                </div>
+<div>
+    <el-col :span="4">
+        <div v-if="show" >
+        <el-card :body-style="{ padding: '0px' }">
+            <img :src="item.imgSrc" class="image">
+            <div style="padding: 14px;">
+                <h1 class="name">{{item.name}}</h1>
+                <p class="tel">{{item.tel}}</p>
             </div>
-        </div>
-        <div v-else>
-
-        </div>
+        </el-card>
+        
     </div>
+    <div v-else>
+
+    </div>
+    </el-col>
+    
+</div>
+    
 </template>
 
 <script>
@@ -29,3 +34,9 @@ export default {
     }
 }
 </script>
+<style>
+    .image {
+    width: 100%;
+    display: block;
+  }
+</style>

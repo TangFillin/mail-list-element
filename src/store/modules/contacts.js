@@ -41,7 +41,7 @@ export default{
                 ];
                 items = items.filter((item)=>{
                     item.id = contactId++;
-                    item.imgSrc = '/static/img/userImg.png';
+                    item.imgSrc = '/static/images/userImg.png';
                     return item;
                 });
                 localStorage.items = JSON.stringify(items);
