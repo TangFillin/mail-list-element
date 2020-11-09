@@ -1,21 +1,16 @@
 <template>
 <div>
-    <el-col :span="4">
-        <div v-if="show" >
-        <el-card :body-style="{ padding: '0px' }">
-            <img :src="item.imgSrc" class="image">
-            <div style="padding: 14px;">
-                <h1 class="name">{{item.name}}</h1>
-                <p class="tel">{{item.tel}}</p>
-            </div>
-        </el-card>
-        
+    <div v-if="id%4">
+        <el-col :span="4">
+            <el-card :body-style="{ padding: '0px' }">
+                <img :src="item.imgSrc" class="image">
+                <div style="padding: 14px;">
+                    <h1 class="name">{{item.name}}</h1>
+                    <p class="tel">{{item.tel}}</p>
+                </div>
+            </el-card>
+        </el-col>
     </div>
-    <div v-else>
-
-    </div>
-    </el-col>
-    
 </div>
     
 </template>
@@ -28,6 +23,7 @@ export default {
             show:true,
             name: this.item.name,
             tel:this.item.tel,
+            id:this.item.id,
             oldName: this.item.name,
             oldTel: this.item.tel
         };

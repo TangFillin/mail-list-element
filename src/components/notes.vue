@@ -1,15 +1,12 @@
 <template>
     <div class="">
-        <el-row :gutter="20">
             <div v-if="newItems.length">
-            <contactItem 
-                v-for="item in newItems"
-                :key= "item.id"
-                :item="item"
-            />
-        </div>
-        </el-row>
-        
+                <contactItem 
+                    v-for="item in newItems"
+                    :key= "item.id"
+                    :item="item"
+                />
+            </div>
     </div>
 </template>
 

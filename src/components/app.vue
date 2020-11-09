@@ -1,11 +1,10 @@
 <template>
-
   <div >
     <el-container >
   <el-header>
     </el-header>
   <el-main>
-    <el-row type="flex" :justify="space-between">
+    <el-row type="flex" :justify="center">
       <el-col :xl="{span:4,offset:10}" :lg="{span:6,offset:9}" :md="{span:8,offset:8}" :sm="{span:10,offset:7}" :xs="{span:18,offset:3}">
           <router-link to="/home/register">注册</router-link>
           <router-link to="/home/login">登录</router-link>
